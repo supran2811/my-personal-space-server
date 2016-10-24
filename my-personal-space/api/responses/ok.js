@@ -20,9 +20,13 @@ module.exports = function sendOK (data, options) {
 
   sails.log.silly('res.ok() :: Sending 200 ("OK") response');
 
-  // Set status code
-  res.status(200);
+  
 
+  // Set status code
+  
+  res.status(200);
+  
+  
   // If appropriate, serve data as JSON(P)
   // If views are disabled, revert to json
   if (req.wantsJSON || sails.config.hooks.views === false) {

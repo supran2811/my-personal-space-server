@@ -8,7 +8,31 @@
 module.exports = {
 
   attributes: {
+    firstname: {
+      type: 'string',
+      required:true
+    },
+    lastname: {
+      type: 'string'
+    },
+    email: {
+      type: 'string',
+      required:true
+    },
+    password: {
+      type: 'string',
+      required:true
+    },
+    username: {
+      type: 'string',
+      primaryKey:true,
+      required:true
+    }
+  },
+  tableName : "usertable",
+  autoCreatedAt : false,
+  autoUpdatedAt : false,
+  autoPK : false
 
-  }
 };
 
