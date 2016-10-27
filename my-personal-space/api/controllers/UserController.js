@@ -8,7 +8,7 @@
 module.exports = {
 
         register : function(req,res){
-            console.log(req.body);
+        //    console.log(req.body);
             
             User.create(req.body).exec(function(err , data){
                      if (err) { return res.serverError(err); }
@@ -21,7 +21,7 @@ module.exports = {
         },
 
         login : function(req,res){
-              console.log(req.body);
+          //    console.log(req.body);
 
               User.find(req.body).exec(function(err , data){
                      if (err) { return res.serverError(err); }
