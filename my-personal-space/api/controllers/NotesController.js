@@ -13,7 +13,7 @@ module.exports = {
                      if (err) { return res.serverError(err); }
 
                     sails.log('data inserted id is:', data.name);
-                    return res.ok();
+                    return res.json(data);
             });
     },
 
@@ -23,6 +23,21 @@ module.exports = {
 
     update : function(req,res){
         return res.ok();
+    },
+    list : function(req,res){
+
+        sails.log(req.query);
+        
+        Notes.find(req.query).exec(function(err , entrydata){
+            if(err){
+                return res.serverError(err);
+            }
+            sails.log('Data exist..');
+            sails.log(entrydata);
+            return res.json(entrydata);
+        })
+
     }
+    
 };
 
